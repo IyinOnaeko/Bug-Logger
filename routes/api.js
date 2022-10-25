@@ -6,7 +6,7 @@ const Bug = require("../models/bugs");
 
 
 
-//get a list of bugs from the database
+////get a list of bugs from the database////
 router.get("/bugs", function (req, res, next) {
     // res.send({ type: "GET" });
 });
