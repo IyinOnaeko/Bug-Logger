@@ -12,16 +12,16 @@ const bugSchema = new Schema({
         type: String,
         required : [true, "enter bug name"]
     },
-    Reporter : {
+    reporter : {
      type : String,
      required : [true, "reporter field is required, could be Dev/QA/CS"]
     },
-    Status: {
+    status: {
         type: String,
         required: [true, "bug status is required, could be New/Open/Active"]
     },
 
-    Priority: {
+    priority: {
         type : Boolean,
         default: false
     }

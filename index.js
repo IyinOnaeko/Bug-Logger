@@ -6,13 +6,18 @@ require("dotenv").config();
 
 //set up express app
 const app = express();
-app.use(bodyParser.json());
 // connect to mongoDB
-
 mongoose.connect(process.env.URL)
 mongoose.Promise = global.Promise;
 
 
+app.use(bodyParser.json());
+
+//error handling middleware
+app.use(function(err, req, res, next){
+    console.log(err);
+    res.status(422).send({error: err.message})
+})
 //initialize routes
 app.use("/api", require("./routes/api"));
 
