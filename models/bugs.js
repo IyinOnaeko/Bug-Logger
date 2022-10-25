@@ -30,4 +30,7 @@ const bugSchema = new Schema({
 
 
 
-const Bugs = mongoose.model('bug')
+const Bug = mongoose.model('bug', bugSchema);
+
+
+module.exports = Bug;

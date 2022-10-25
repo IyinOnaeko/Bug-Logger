@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Bug = require("../models/bugs")
 
 ///route-setup
 
@@ -14,13 +15,10 @@ router.get("/bugs", function (req, res) {
 //add a new bug to the database
 
 router.post("/bugs", function (req, res) {
-    console.log(req.body);
-    res.send({
-        type: "POST",
-        name: req.body.name,
-        class: req.body.class
-
+    Bug.create(req.body).then(function(bug){
+        res.send({bug});
     });
+    
 });
 
 
