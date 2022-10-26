@@ -24,11 +24,14 @@ const bugSchema = new Schema({
     priority: {
         type : Boolean,
         default: false
+    },
+
+    timestamp : {
+        type: String,
+        default : Date.now()
     }
 //add in sprint number
 });
-
-
 
 const Bug = mongoose.model('bug', bugSchema);
 
