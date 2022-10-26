@@ -7,9 +7,11 @@ const Bug = require("../models/bugs");
 
 
 ////get a list of bugs from the database////
-router.get("/bugs", function (req, res, next) {
+router.get("/bugs",  async function (req, res, next) {
     // res.send({ type: "GET" });
-});
+        const bugs = await Bug.find();
+        res.json(bugs);
+    });
 
 
 //add a new bug to the database
